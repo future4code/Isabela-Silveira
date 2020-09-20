@@ -1,0 +1,41 @@
+[33mcommit ef69f27a6a6ce135bbaf2310679e9565b29c17d3[m[33m ([m[1;36mHEAD -> [m[1;32msemana1-aula4[m[33m)[m
+Author: Isabelar07 <isabelarochas@outlook.com.br>
+Date:   Fri Sep 18 16:25:19 2020 -0300
+
+    alteracao-cabecalho-das-paginas
+
+[33mcommit fa84d23be354a2fae3331ca09ac7c7c5a8668a84[m[33m ([m[1;32mmaster[m[33m)[m
+Merge: 2a776da d3d99e5
+Author: Isabelar07 <71158072+Isabelar07@users.noreply.github.com>
+Date:   Fri Sep 18 00:12:09 2020 -0300
+
+    Merge pull request #2 from future4code/semana1-aula3
+    
+    criacao-da-loja
+
+[33mcommit d3d99e5700d4e8fd9b23305e1b69aa2413fae4c6[m[33m ([m[1;31morigin/semana1-aula3[m[33m, [m[1;32msemana1-aula3[m[33m)[m
+Author: Isabelar07 <isabelarochas@outlook.com.br>
+Date:   Wed Sep 16 16:27:58 2020 -0300
+
+    criacao-da-loja
+
+[33mcommit 2a776da832af7f1dc95b803c73704ea75c673b75[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 2c77456 21a5a19
+Author: Isabelar07 <71158072+Isabelar07@users.noreply.github.com>
+Date:   Tue Sep 15 20:39:41 2020 -0300
+
+    Merge pull request #1 from future4code/semana1-aula2
+    
+    escrevi-minha-mini-biografia-para-vocês
+
+[33mcommit 21a5a1924ac70b09abb6513ece47e53353d2a95c[m[33m ([m[1;31morigin/semana1-aula2[m[33m, [m[1;32msemana1-aula2[m[33m)[m
+Author: Isabelar07 <isabelarochas@outlook.com.br>
+Date:   Tue Sep 15 20:26:11 2020 -0300
+
+    escrevi-minha-mini-biografia-para-vocês
+
+[33mcommit 2c77456564e0772f5bcdbecf5190082c5c9bc29c[m[33m ([m[1;31morigin/Isabela-Silveira[m[33m)[m
+Author: João Vinicius Alves <jvp.alves@hotmail.com>
+Date:   Tue Sep 15 00:38:17 2020 -0300
+
+    Initial commit
