@@ -115,6 +115,8 @@ div:last-child {
 table {
     width: 60%;
     text-align: center;
+    border: none;
+    border-bottom: 2px;
 }
 
 td button {
@@ -132,12 +134,6 @@ td button:active {
 td button:hover {
     background-color:  #635a3d;
 }
-
-
-
-
-    
-
 
 
 .container-do-search {
