@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "roboto";
 }
 
 h2 {
@@ -27,6 +28,7 @@ button:focus {
 
 img {
     width: 100px;
+    height: 100px;
 }
 
 div>p:first-child {
@@ -34,7 +36,7 @@ div>p:first-child {
 }
 
 div img {
-    background: black;
+    background: white;
 }
 
 .botao-amarelo {
@@ -70,7 +72,7 @@ div img {
     background-color: #2274a5;
     color: white;
     padding-top: 100px;
-    font-family: "roboto";
+    
 }
 
 .container>p {
