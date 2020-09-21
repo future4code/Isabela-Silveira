@@ -70,16 +70,19 @@ div img {
     background-color: #2274a5;
     color: white;
     padding-top: 100px;
+    font-family: "roboto";
 }
 
 .container>p {
-    display: inline;
+    display: block;
+   
     
-       
 }
 
+
 #container-de-descricao>ol {
-    padding: 15px 15px;
+    padding: 15px 835px;
+    
 }
 
 #container-para-comprar {
