@@ -117,6 +117,8 @@ table {
     text-align: center;
     border: none;
     border-bottom: 2px;
+    margin: auto;
+    padding: auto;
 }
 
 td button {
