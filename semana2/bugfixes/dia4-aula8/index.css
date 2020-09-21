@@ -80,10 +80,12 @@ div img {
 }
 
 #container-para-comprar>p {
+    display: block;
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
 }
+
 
 
 /**
