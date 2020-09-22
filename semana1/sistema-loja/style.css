@@ -1,0 +1,118 @@
+/* Cabeçalho */
+
+#cabecalho {
+    background-color:   #ff751a;
+    margin: -9px;
+    padding-top: 30px;
+    
+    text-align: center; 
+   
+}
+
+#cabecalho h1 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 55px;
+    font-style: oblique;
+    padding: 50px;
+}
+
+#cabecalho img {
+    float: left;
+    
+}
+
+/* Cabeçalho - Menu */
+
+#menu ul {
+    list-style: none;
+    background-color: #1a0a00;
+    padding: 10px;
+    margin-left: -9px;
+    margin-right: -9px;
+
+}
+
+#menu ul li {
+    display: inline;
+    padding: 10px;
+    margin: 4px;
+}
+
+#menu ul li a {
+    display: inline-block;
+    color: whitesmoke;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Texto do site */
+
+
+
+.corpo h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 90px;
+    
+}
+
+.corpo h2 {
+    text-align: center;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 130px;
+}
+
+.redes-sociais h3 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-bottom: 10px;
+}
+
+.icone-redes-sociais img {
+   display: inline;
+   margin-left: auto;
+   margin-right: auto;
+   width: 10%;
+   margin: 5px;
+   padding-left: 300px;   
+}
+
+/* Rodapé */
+
+#rodape {
+    background-color:  #a6a6a6;
+    margin: -9px;
+    padding-top: 30px;
+    text-align: center;
+    padding-bottom: -50px;
+}
+
+
+
+#linkrodape ul {
+    list-style: none;
+    background-color: #a6a6a6;
+    padding: 10px;
+    margin-left: -9px;
+    margin-right: -9px;
+}
+
+#linkrodape ul li {
+    display: inline;
+    padding: 20px;
+    margin: 4px;
+}
+    
+#linkrodapé ul li a {
+    display: inline-block;
+    color: whitesmoke;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+    
+    
+   
+    
