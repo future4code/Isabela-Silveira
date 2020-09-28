@@ -95,10 +95,6 @@ main {
     font-weight: bolder;
 }
 
-/* #mae-segundobloco {
-    background-color: #e4b319;
-    /* height: 226px; */
-
 
 #segundo-bloco {
     text-align: center;
@@ -110,25 +106,59 @@ main {
     font-size: 1.3em;
 }
 
+#segundo-bloco h1 {
+    margin-top: 150px;
+}
 #img-bloco2  {
     margin-top: 30px;
     background-color: #e4b319;
 }
 
 #terceiro-bloco {
-    background-color: #ebebe9;
-    height: 424px;
+    background-color: white;
+    height: 500px;
     text-align: center;
     font-family: 'Secular One', sans-serif;
     font-size: 1.3em;
     color: #cf611d;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    
+}
+
+#terceiro-bloco h1 {
+    margin-right: -50px;
+    margin-top: 150px;
 }
 
 #img-bloco3 {
-    background-color: #ebebe9;
+    margin-right: 50px;
+   
 }
 
-/* EStilo rodapé */
+/* Estilo da pagina "sobre nós" */
+
+#sobrenos {
+    display: grid;
+    font-family: "roboto";
+    font-size: 1.6em;
+    min-height: 70vh;
+    margin-top: 200px;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Estilo da pagina "contato" */
+
+#contato {
+    justify-content: center;
+    margin-top: 200px;
+    margin-bottom: -50px;
+    font-family: "roboto";
+}
+
 
 footer {
     background-color: #ff914d;
@@ -141,7 +171,12 @@ footer {
     color: white;
     align-items: center;
     justify-content: center;
-    margin-top: 2px;
+    bottom: 0;
+    margin-bottom: 0;
+}
+
+footer img {
+    margin: 30px;
 }
 
 
