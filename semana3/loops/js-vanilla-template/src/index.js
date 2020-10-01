@@ -65,6 +65,58 @@ for (let i = 0; i < arrayOriginal.length; i++) {
     if (arrayOriginal[i] < valorMaximo)
 }
 
-console.log(`O maior número é ${valorMaximo} e o menor número é ${valorMinimo}`) */
+console.log(`O maior número é ${valorMaximo} e o menor número é ${valorMinimo}`) 
+
+Desafio 2:
+
+const numero = Number(prompt("Escolha um número"))
+console.log("Vamos jogar!")
+
+let numero2 = Number(prompt("Adivinhe um número"))
+console.log(`O número chutado foi: ${numero2}`)
+
+let armazenarNum = 1
+
+while(numero !== numero2) {
+    armazenarNum ++
+    
+    if (numero2 < numero) {
+        console.log("Você digitou um número menor")
+    } else {
+        console.log("Você digitou um número maior")
+    }
+    numero2 = Number(prompt("Adivinhe  um número"))
+    console.log(`O número chutado foi: ${numero2}`)
+     
+}
 
 
+console.log("Acertou")
+console.log(`O número de tentativas foi: ${armazenarNum}`)
+
+
+const numero = Math.floor((Math.random()*100)+1)
+
+
+let numero2 = Number(prompt("Adivinhe um número"))
+console.log(`O número chutado foi: ${numero2}`)
+
+let armazenarNum = 1
+
+while(numero !== numero2) {
+    armazenarNum ++
+    
+    if (numero2 < numero) {
+        console.log("Você digitou um número menor")
+    } else {
+        console.log("Você digitou um número maior")
+    }
+    numero2 = Number(prompt("Adivinhe  um número"))
+    console.log(`O número chutado foi: ${numero2}`)
+     
+}
+
+
+console.log("Acertou")
+console.log(`O número de tentativas foi: ${armazenarNum}`)
+*/
