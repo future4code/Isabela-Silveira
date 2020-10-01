@@ -33,10 +33,11 @@ for (let i=0; i < arrayOriginal.length; i++) {
 c)
 
 const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-let pares = []
-for (let i=0; i < arrayOriginal.length; i++) {
-if(arrayOriginal[i] % 2 === 0){ 
-pares.push(arrayOriginal[i])
+ let pares = []
+
+ for (let i = 0; i < arrayOriginal.length; i++) {
+     if(arrayOriginal[i] % 2 === 0){ 
+    pares.push(arrayOriginal[i])
  }
 }
 console.log(pares)
@@ -67,11 +68,3 @@ for (let i = 0; i < arrayOriginal.length; i++) {
 console.log(`O maior número é ${valorMaximo} e o menor número é ${valorMinimo}`) */
 
 
-const arrayOriginal = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-let pares = []
-for (let i=0; i < arrayOriginal.length; i++) {
-if (arrayOriginal[i] % 2 === 0){ 
-pares.push(arrayOriginal[i])
- }
-}
-console.log(pares)
