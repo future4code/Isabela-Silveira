@@ -98,3 +98,6 @@ console.log(`Bom filme! ... com ${snack}`)
 let nomeCompleto = prompt("Digite seu nome completo").toLowerCase()
 let tipoDeJogo = prompt("Qual o tipo de jogo? escolha IN para internacional ou DO para doméstico ").toUpperCase()
 let etapaDoJogo = prompt("Indique a etapa do jogo: use SF para semi-final, DT para a decisão de 3° lugar ou FI para a final").toUpperCase()
+let categoria = prompt("Indique a categoria: 1, 2, 3 ou 4")
+let quantIngressos = Number(prompt("Quantos ingressos você deseja?"))
+
