@@ -11,7 +11,7 @@ b) Seria impresso Amanda e Caio.
 
 3) Pega os números pares do array, multiplica por dois e coloca no arrayFinal. E o nome da array poderia ser multiplicarNumPares. 
 
---------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------
 EXERCÍCIOS DE ESCRITA DE CÓDIGO
 
 4)
@@ -42,7 +42,8 @@ let estudante = prompt("Você é estudante? Digite sim ou não.")
 
 const resultadoDadosPessoais = dadosPessoais(nome, idade, cidade, estudante)
 console.log(resultadoDadosPessoais)
----------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------
 
 5)
 
@@ -68,10 +69,6 @@ const resultado = checaMaiorOuIgual(20, 20)
 console.log(resultado)
 
 c)
-
-
-*/
-
 function mensagemImpressaDezX(mensagem){
     for(let i = 0; i < 10; i++)
        console.log(mensagem)
@@ -79,5 +76,31 @@ function mensagemImpressaDezX(mensagem){
 
 const resultado = mensagemImpressaDezX("Hello World")
 
+----------------------------------------------------------------------------------------------------------------------
+6)
+a)
+const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
 
+function quantidadeElementos(array){
+    for(let i = 0; i < array.length; i++){
+        console.log(array[i])
+        return array.length
+    }
+}
+
+const resultado = quantidadeElementos(array)
+console.log('O resultado é:', resultado)
+*/
+
+let checaParidade = (a) => {
+    if(a % 2 === 0){
+        return "é par"
+    } else {
+        return "é impar"
+    }
+}
+
+let numero = Number(prompt("Digite um Número"))
+let resultado = checaParidade(numero)
+console.log(resultado)
 
