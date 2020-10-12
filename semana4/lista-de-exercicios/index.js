@@ -38,6 +38,15 @@ for(let comida of lista) {
     console.log(comida)
 }
 
+// 2) leitura dos valores das expressões lógicas:
+
+a) false
+b) false
+c) true
+d) true 
+e) true
+
+
 ----------------------------------------------------------------------------------------------------------------------
 
 */ 
