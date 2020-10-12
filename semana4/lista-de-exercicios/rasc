@@ -1,0 +1,38 @@
+// 5) programa que indica número maior, se são divisíveis e a diferença entre eles:
+
+let lista = [15, 30]
+let numeroMaior = 0 
+
+console.log(`Entrada:`)
+console.log(lista)
+
+
+for (let i = 0; i < lista.length; i++){
+    if (lista[i] > numeroMaior){
+         numeroMaior = lista[i]
+    } 
+}
+console.log(`Saída:`)
+console.log(`o maior é: ${numeroMaior}`)
+
+if (lista[0] % lista[1] === 0){ 
+    console.log('15 é divisível por 30')
+} else {
+    console.log('15 não é divisível por 30')
+} if (lista[1] % lista[1] === 0){ 
+    console.log('30 é divisível por 15')
+} else {
+    console.log('30 não é divisível por 15')
+}
+
+if (lista[1] - lista[0]){
+    console.log(`A diferença entre eles é ${lista[1] - lista[0]}`)
+} else{
+}
+
+----------------------------------------------------------------------------------------------------------------------
+
+EXERCÍCIO DE funções
+
+1)
+*/
