@@ -46,10 +46,37 @@ c) true
 d) true 
 e) true
 
+3)
+
+// O código não funciona, pois não foi adicionado nenhum valor a variável e faltava o incremento.
+
+const quantidadeDeNumerosPares = Number(prompt("Digite um valor: "))
+let i = 0
+while(i < quantidadeDeNumerosPares) {
+    quantidadeDeNumerosPares 
+
+   console.log(i*2)
+   i++
+}
+
+4)
 
 ----------------------------------------------------------------------------------------------------------------------
 
 */ 
+
+let ladosDoTriangulo =  (a, b, c) => {
+    if(a === b && b === c){
+        console.log("É um triângulo Equilátero")
+    } else if(a === b && b !== c){
+        console.log("É um triângulo Isósceles")
+    } else  {
+        console.log("É um triângulo Escaleno")
+    }
+}
+
+ladosDoTriangulo(10, 10, 5)
+
 
 
 
