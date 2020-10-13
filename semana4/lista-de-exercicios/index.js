@@ -169,22 +169,19 @@ let criaRetangulo = (lado1,lado2) => {
 const resultado = criaRetangulo(5,8)
 console.log(resultado)
 
+
+EXERCÍCIO 3
+
+
 */ 
-
-let criaRetangulo = (lado1,lado2) => {
-    let retangulo = {
-        largura: lado1,
-        altura: lado2,
-        perimetro: 2 * (lado1 + lado2),
-        area: lado1 * lado2,
-
-    }
+let filmeFavorito = {
+    titulo: 'velozes e Furiosos 8',
+    ano: 2017,
+    diretor: 'F. Gary Gray',
+    atores: ['Vin Diesel', 'Dwayne Johnson']
 }
 
-let resultado = criaRetangulo(5,8)
-console.log(resultado)
-
-
+console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.atores}`)
 
 
 
