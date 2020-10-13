@@ -111,8 +111,6 @@ EXERCÍCIOS DE FUNÇÕES
 
 1) Função que recebe array de numeros e imprime o segundo maior e o segundo menor número.
 
-*/ 
-
 const arrayNumeros = [1, 25, 15, 35, 22, 16, 17, 18, 23, 50]
 
 let segundoMaior =[]
@@ -139,7 +137,15 @@ function recebeArray(arrayNumeros){
 recebeArray(arrayNumeros)
 
 
+*/ 
 
+let mensagemAlerta = (alerta) => {
+    alert("Hello Labenu")
+}
+
+const mostraAlerta = mensagemAlerta(alert)
+
+console.log(mostraAlerta)
 
 
 
