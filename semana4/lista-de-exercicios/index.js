@@ -13,7 +13,7 @@
 EXERCÍCIO DE LÓGICA DE PROGRAMAÇÃO: 
 
 
-// 1) Programa para percorrer/iterar uma lista
+EXERCÍCIO 1 - Programa para percorrer/iterar uma lista
 
 1- 
 let lista = ["doritos", "ruffles", "açaí", "chocolate"]
@@ -38,7 +38,7 @@ for(let comida of lista) {
     console.log(comida)
 }
 
-// 2) leitura dos valores das expressões lógicas:
+EXERCÍCIO 2 - leitura dos valores das expressões lógicas:
 
 a) false
 b) false
@@ -46,7 +46,7 @@ c) true
 d) true 
 e) true
 
-3) Imprime os números pares de acordo com o número colocado pelo usuário
+EXERCÍCIO 3 - Imprime os números pares de acordo com o número colocado pelo usuário
 
 // O código não funciona, pois não foi adicionado nenhum valor a variável e faltava o incremento.
 
@@ -59,7 +59,7 @@ while(i < quantidadeDeNumerosPares) {
    i++
 }
 
-4) Imprime se é triângulo Equilátero, Isósceles ou Escaleno
+EXERCÍCIO 4 - Imprime se é triângulo Equilátero, Isósceles ou Escaleno
 
 let ladosDoTriangulo =  (a, b, c) => {
     if(a === b && b === c){
@@ -73,7 +73,7 @@ let ladosDoTriangulo =  (a, b, c) => {
 
 ladosDoTriangulo(10, 10, 5)
 
-5) programa que indica número maior, se são divisíveis e a diferença entre eles:
+EXERCÍCIO 5 - programa que indica número maior, se são divisíveis e a diferença entre eles:
 
 let numero = [15, 30]
 let numeroMaior = 0 
@@ -109,7 +109,7 @@ if (numero[1] - numero[0]){
 ----------------------------------------------------------------------------------------------------------------------
 EXERCÍCIOS DE FUNÇÕES
 
-1) Função que recebe array de numeros e imprime o segundo maior e o segundo menor número.
+EXERCÍCIO 1 - Função que recebe array de numeros e imprime o segundo maior e o segundo menor número.
 
 const arrayNumeros = [1, 25, 15, 35, 22, 16, 17, 18, 23, 50]
 
@@ -136,8 +136,7 @@ function recebeArray(arrayNumeros){
 
 recebeArray(arrayNumeros)
 
-
-*/ 
+EXERCÍCIO 2 - Função não nomeada que faz um alert e invoca a função
 
 let mensagemAlerta = (alerta) => {
     alert("Hello Labenu")
@@ -146,6 +145,45 @@ let mensagemAlerta = (alerta) => {
 const mostraAlerta = mensagemAlerta(alert)
 
 console.log(mostraAlerta)
+
+----------------------------------------------------------------------------------------------------------------------
+
+EXERCÍCIOS DE OBJETOS
+
+EXERCÍCIO 1 - o que é array e objetos
+
+array é uma lista, guarda várias informações ao mesmo tempo. Já objetos armazena dados mais complexos de uma forma mais organizada.
+
+EXERCÍCIO 2
+
+let criaRetangulo = (lado1,lado2) => {
+    let retangulo = {
+        largura: lado1,
+        altura: lado2,
+        perimetro: 2 * (lado1 + lado2),
+        area: lado1 * lado2,
+
+    }
+}
+
+const resultado = criaRetangulo(5,8)
+console.log(resultado)
+
+*/ 
+
+let criaRetangulo = (lado1,lado2) => {
+    let retangulo = {
+        largura: lado1,
+        altura: lado2,
+        perimetro: 2 * (lado1 + lado2),
+        area: lado1 * lado2,
+
+    }
+}
+
+let resultado = criaRetangulo(5,8)
+console.log(resultado)
+
 
 
 
