@@ -107,8 +107,38 @@ if (numero[1] - numero[0]){
 
 
 ----------------------------------------------------------------------------------------------------------------------
+EXERCÍCIOS DE FUNÇÕES
+
+1) Função que recebe array de numeros e imprime o segundo maior e o segundo menor número.
 
 */ 
+
+const arrayNumeros = [1, 25, 15, 35, 22, 16, 17, 18, 23, 50]
+
+let segundoMaior =[]
+let segundoMenor = []
+
+
+function recebeArray(arrayNumeros){
+    for(let i = 0; i < arrayNumeros.length; i++){
+        if (arrayNumeros[i] > maior){
+            segundoMaior.push(arrayNumeros[i])
+            
+        }
+        if ( arrayNumeros[i] < menor){
+            segundoMenor.push(arrayNumeros[i])
+           
+        }
+    }
+    console.log(arrayNumeros)
+    console.log(segundoMaior)
+    console.log(segundoMenor)
+
+}
+
+recebeArray(arrayNumeros)
+
+
 
 
 
