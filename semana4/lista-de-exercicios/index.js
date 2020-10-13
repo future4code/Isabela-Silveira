@@ -73,6 +73,39 @@ let ladosDoTriangulo =  (a, b, c) => {
 
 ladosDoTriangulo(10, 10, 5)
 
+5) programa que indica número maior, se são divisíveis e a diferença entre eles:
+
+let numero = [15, 30]
+let numeroMaior = 0 
+
+console.log(`Entrada:`)
+console.log(lista)
+
+
+for (let i = 0; i < numero.length; i++){
+    if (numero[i] > numeroMaior){
+         numeroMaior = numero[i]
+    } 
+}
+console.log(`Saída:`)
+console.log(`o maior é: ${numeroMaior}`)
+
+if (numero[0] % numero[1] === 0){ 
+    console.log('15 é divisível por 30')
+} else {
+    console.log('15 não é divisível por 30')
+} if (numero[1] % numero[1] === 0){ 
+    console.log('30 é divisível por 15')
+} else {
+    console.log('30 não é divisível por 15')
+}
+
+if (numero[1] - numero[0]){
+    console.log(`A diferença entre eles é ${lista[1] - lista[0]}`)
+} else{
+}
+
+
 ----------------------------------------------------------------------------------------------------------------------
 
 */ 
