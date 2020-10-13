@@ -46,7 +46,7 @@ c) true
 d) true 
 e) true
 
-3)
+3) Imprime os números pares de acordo com o número colocado pelo usuário
 
 // O código não funciona, pois não foi adicionado nenhum valor a variável e faltava o incremento.
 
@@ -59,11 +59,7 @@ while(i < quantidadeDeNumerosPares) {
    i++
 }
 
-4)
-
-----------------------------------------------------------------------------------------------------------------------
-
-*/ 
+4) Imprime se é triângulo Equilátero, Isósceles ou Escaleno
 
 let ladosDoTriangulo =  (a, b, c) => {
     if(a === b && b === c){
@@ -76,6 +72,12 @@ let ladosDoTriangulo =  (a, b, c) => {
 }
 
 ladosDoTriangulo(10, 10, 5)
+
+----------------------------------------------------------------------------------------------------------------------
+
+*/ 
+
+
 
 
 
