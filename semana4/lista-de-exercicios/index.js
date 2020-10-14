@@ -227,11 +227,6 @@ console.log(retornaArrayAdultos)
 
 b)
 
-
-
-*/ 
-
-
 const informacoesPessoas = [
     { nome: "Pedro", idade: 20 },
 	{ nome: "João", idade: 10 },
@@ -247,6 +242,46 @@ let retornaArrayMenores = informacoesPessoas.filter((dados) => {
 })
 
 console.log(retornaArrayMenores)
+
+
+EXERCÍCIO 2
+
+a)
+
+const array = [1, 2, 3, 4, 5, 6]
+
+let multiplicaPorDois = array.map((dados) => {
+    return dados * 2
+})
+
+b) 
+
+const array = [1, 2, 3, 4, 5, 6]
+
+let multiplicaPorTres = array.map((dados) => {
+    return dados * 3
+})
+
+c)
+
+
+*/ 
+const array = [1, 2, 3, 4, 5, 6]
+
+let numerosImpares = array.map((dados) => {
+    if(dados % 2 === 0) {
+        return 
+    } else {
+        return `${dados} é impar`
+    }
+    
+})
+
+console.log(numerosImpares)
+
+
+
+
 
 
 
