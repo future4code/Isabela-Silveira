@@ -172,8 +172,6 @@ console.log(resultado)
 
 EXERCÍCIO 3
 
-
-*/ 
 let filmeFavorito = {
     titulo: 'velozes e Furiosos 8',
     ano: 2017,
@@ -183,8 +181,27 @@ let filmeFavorito = {
 
 console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.atores}`)
 
+EXERCÍCIO 4
 
+*/ 
 
+let pessoa = {
+    nome: 'Linda',
+    idade: 22,
+    email: 'soulindademais@outlook.com',
+    endereco: 'rua da mais linda, bairro Jardim das Maravilhas'
+}
+
+let anonimizarPessoa = (novoArray) => {
+    let pessoaAnonima = {
+        ...novoArray,
+    nome: 'Anônimo'
+    }
+console.log(pessoaAnonima)
+}
+
+console.log(pessoa)
+anonimizarPessoa(pessoa)
 
 
 
