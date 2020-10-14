@@ -183,8 +183,6 @@ console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito
 
 EXERCÍCIO 4
 
-*/ 
-
 let pessoa = {
     nome: 'Linda',
     idade: 22,
@@ -203,7 +201,52 @@ console.log(pessoaAnonima)
 console.log(pessoa)
 anonimizarPessoa(pessoa)
 
+----------------------------------------------------------------------------------------------------------------------
 
+EXERCÍCIOS DE FUNÇÕES DE ARRAY
+
+EXERCÍCIO 1
+
+a)
+
+const informacoesPessoas = [
+    { nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+
+let retornaArrayAdultos = informacoesPessoas.filter((dados) => {
+    if(dados.idade >= 20){
+        return true
+    }
+    return false
+})
+
+console.log(retornaArrayAdultos)
+
+b)
+
+
+
+*/ 
+
+
+const informacoesPessoas = [
+    { nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+
+let retornaArrayMenores = informacoesPessoas.filter((dados) => {
+    if(dados.idade < 20){
+        return true
+    }
+    return false
+})
+
+console.log(retornaArrayMenores)
 
 
 
