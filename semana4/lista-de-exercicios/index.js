@@ -264,8 +264,6 @@ let multiplicaPorTres = array.map((dados) => {
 
 c)
 
-
-*/ 
 const array = [1, 2, 3, 4, 5, 6]
 
 let numerosImpares = array.map((dados) => {
@@ -280,8 +278,79 @@ let numerosImpares = array.map((dados) => {
 console.log(numerosImpares)
 
 
+EXERCÍCIO 3
 
+a)
 
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+let pemissaoParaEntrar = pessoas.filter((dados) => {
+    if(dados.idade > 14 && dados.idade < 60 && dados.altura >= 1.5){
+        return true
+    } else {
+        return false
+    }
+})
+
+b)
+
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+let SempemissaoEntrar = pessoas.filter((dados) => {
+    if(dados.idade < 14 && dados.idade > 60 && dados.altura < 1.5){
+        return true
+    } else {
+        return false
+    }
+})
+
+EXERCÍCIO 3
+
+*/ 
+
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+let criaEmail = consultas.map((dados) => {
+    if(dados.cancelada === false){
+        switch(dados.genero){
+            case "masculino":
+            return (`Olá, Sr.${dados.nome}. Estamos enviando esta mensagem para lembrá-lo  da sua consulta no dia ${dados.dataDaConsulta}. Por favor, acuse
+                o recebimento deste e-mail.`)
+            
+            case "feminino":
+            return (`Olá, Sra.${dados.nome}. Estamos enviando esta mensagem para lembrá-la  da sua consulta no dia ${dados.dataDaConsulta}. Por favor, acuse
+                o recebimento deste e-mail.`)
+        }
+    } else {
+        switch(dados.genero){
+        case "masculino":
+            return (`Olá, Sr. ${dados.nome}. Infelizmente, sua consulta marcada
+            para o dia ${dados.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`)  
+        case "feminino":
+            return (`Olá, Sra. ${dados.nome}. Infelizmente, sua consulta marcada
+                para o dia ${dados.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`)
+    }
+}
+})
 
 
 
