@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import Cadastro from './components/Cadastro';
 import Registro from './components/Registro';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import axios from 'axios'
 
 const EstiloApp = styled.div`
   display: grid;
@@ -19,3 +20,4 @@ function App() {
 }
 
 export default App;
+
