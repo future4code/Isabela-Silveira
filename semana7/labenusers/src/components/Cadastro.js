@@ -1,58 +1,59 @@
 import React from 'react';
-import styled from 'styled-components'
-import axios from 'axio'
+import styled from 'styled-components';
+import axios from 'axios'
 
-const Teste = styled.div`
-    border: 2px solid black;
-    /* display: flex;
-    flex-direction: column;
-    align-items: flex-start; */
-       
-`
+
 class Cadastro extends React.Component {
   state = {
-    name: '',
-    email: '',
+    valorNome: '',
+    valorEmail: ''
   }
 
-  handleChange = event => {
-    this.setState({name: event.target.value});
+  createUser = () => { //cria usuário
+   const body = {
+     name: this.state.valorNome,
+     email: this.state.valorEmail
+   }
+
+   axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', body, {
+     headers: {
+       Authorization: 'isabela-rocha-dumont'
+     }
+   }).then(response => {
+     alert('Usuário criado com sucesso!!')
+     this.setState({valorNome: '', valorEmail: ''})
+   }).catch(error => {
+     console.log(error.message)
+   })
   }
 
-  handleSubmit = event => {
-    event.preventDefault();
+  // a função acima é do post (createUser) do postman para criar usuário
 
-    const user = {
-      name: this.state.name,
-      email: this.state.email
-    }
-
-    axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', user {
-        headers: {
-        Authorization: 'isabela-rocha-dumont'
-        }
-      }).thenthen((resposta) => {
-          console.log(resposta.data);
-        }).catch((error) => {
-          console.log(error.message);
-      });
-      }
-      };
+  onChangeValorNome = (event) => {
+    this.setState({valorNome: event.target.value})
   }
 
+  onChangeValorEmail = (event) => {
+    this.setState({valorEmail: event.target.value})
+  }
+  
+  // as funções acima é do onChange dos inputs, para fazer isso tem que pegar o objeto do state. Isso é input controlado.
 
-    render () {
-        return (
-            <Teste>
-                <label>Nome:</label>
-                <input type='text' onChange={this.handleChange} /><br></br>
-                <label>Email:</label>
-                <input type='text' /><br></br>
-                <button type='submit'>Salvar</button>
-                
-            </Teste>
-        ) 
-    }
+  render() {
+    return (
+      <div>
+        <p>Nome:</p>
+        <input 
+        value={this.state.valorNome} onChange={this.onChangeValorNome}
+        />
+        <p>Email:</p>
+        <input 
+        value={this.state.valorEmail} onChange={this.onChangeValorEmail}
+        />
+        <button onClick={this.createUser}>Salvar</button>
+      </div>
+    )
+  }
 }
 
 export default Cadastro
