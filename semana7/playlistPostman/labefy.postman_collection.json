@@ -1,0 +1,292 @@
+{
+	"info": {
+		"_postman_id": "2120e568-323c-49ab-94cf-033b8ee08654",
+		"name": "labefy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Playlist Eletrônica - questão 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "isabela-rocha-dumont",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Eletrônica\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				},
+				"description": "Cria playlist "
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Playlists - questão 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "isabela-rocha-dumont",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				},
+				"description": "Para verificar se as operações feitas no Create Playlist deram certo."
+			},
+			"response": []
+		},
+		{
+			"name": "Playlist Internacional - questão 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "isabela-rocha-dumont",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Internacional\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Playlist MPB - questão 1",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "isabela-rocha-dumont",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"MPB\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Track To Playlist Eletônica - questão 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "isabela-rocha-dumont",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Hear Me Now\",\r\n    \"artist\": \"Alok, Bruno Martini e Zeeba\",\r\n    \"url\": \"https://www.youtube.com/watch?v=JVpTp8IHdEg&list=RDQMJfIViYdEW1k&start_radio=1&ab_channel=Spinnin%27Records\",\r\n\r\n    \"name\": \"Tremor\",\r\n    \"artist\": \"Dimitri Vegas, Martin Garrix e like mike\",\r\n    \"url\": \"https://www.youtube.com/watch?v=9vMh9f41pqE&list=RDQMJfIViYdEW1k&index=5&ab_channel=Spinnin%27Records\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						":playlistId",
+						"tracks"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": "976282d4-2760-4fe0-8576-ae5fdc5fb4cc"
+						}
+					]
+				},
+				"description": "Para adicionar uma música na playlist"
+			},
+			"response": []
+		},
+		{
+			"name": "Add Track To Playlist Internacional - questão 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "isabela-rocha-dumont",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"I Want It That Way\", \r\n    \"artist\": \"Backstreet Boys\",\r\n    \"url\": \"https://www.youtube.com/watch?v=4fndeDfaWCg&ab_channel=BackstreetBoysVEVO\",\r\n\r\n    \"name\": \"Shape of You\", \r\n    \"artist\": \"Ed Sheeran\",\r\n    \"url\": \"https://www.youtube.com/watch?v=JGwWNGJdvx8&ab_channel=EdSheeran\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						":playlistId",
+						"tracks"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": "3d02cef8-32c5-4b9f-aba9-8182d8875423"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Track To Playlist MPB - questão 3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "isabela-rocha-dumont",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Era Uma Vez\", \r\n    \"artist\": \"Kell Smith\",\r\n    \"url\": \"https://www.youtube.com/watch?v=xJNKT9HAXRc&ab_channel=MidasMusic\",\r\n\r\n    \"name\": \"Trem-Bala\", \r\n    \"artist\": \"Ana Vilela\",\r\n    \"url\": \"https://www.youtube.com/watch?v=sWhy1VcvvgY&ab_channel=AnaVilela\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						":playlistId",
+						"tracks"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": "183916d4-e9a2-43e4-87e5-19d73cffb1ac"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
