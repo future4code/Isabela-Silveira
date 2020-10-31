@@ -1,39 +1,28 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import styled from 'styled-components';
-import axios from 'axios'
+import axios from 'axios';
+import CriaPlaylist from './Components/CriaPlaylist';
+import ListaPlaylist from './Components/ListaPlaylist'
 
 
 class App extends React.Component {
   state = {
-    playlists: []
+    formPlaylist: true
   }
 
-  componentDidMount = () => {
-    this.obterPlaylist()
+  mudaPagina = () => {
+    this.setState({formPlaylist: !this.state.formPlaylist})
   }
-
-  obterPlaylist = () => {
-    axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists', {
-      headers: {
-        Authorization: 'isabela-rocha-dumont'
-        }
-      }).then(res => {
-          console.log(res.data)
-      }).catch(erro => {
-        console.log(erro.message)
-      })
-    }
 
   render() {
-      const playlistRenderizada = this.state.playlists.map(playlist => {
-        return <p key={playlist.id}>{playlist.name}</p>
-      })
+    const paginaAtual = this.state.formPlaylist ? (<CriaPlaylist />) : (<ListaPlaylist />)
 
     return (
       <div>
-        {playlistRenderizada}
+        {paginaAtual}
+        <button onClick={this.mudaPagina}>Minhas playlists</button>
       </div>
     )
   }
