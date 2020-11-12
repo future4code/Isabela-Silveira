@@ -3,13 +3,12 @@ import React, { useState, useEffect } from 'react';
 
 
 
+
 const TelaInicial = () => {
 
     const [profile, setProfile] = useState([])
-
-    useEffect(() => {
-        getProfile()
-    }, [])
+    const [choiceProfile, setChoiceProfile] = useState(false)
+    const [renderComponent, setRenderComponent] = useState(false)
 
     const getProfile = () => {
         Axios.get('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/isabela/person').then(response => {
@@ -19,10 +18,10 @@ const TelaInicial = () => {
         })
     }
 
-    const choosePerson = () => {
+    const postChoosePerson = () => {
         const body = {
-            id: profile.id;
-            choice: true
+            id: profile.id,
+            choice: choiceProfile
         }
 
         Axios.post('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/isabela/choose-person', body).then(response => {
@@ -32,7 +31,25 @@ const TelaInicial = () => {
         })
     } 
 
-    onClickLike = ()
+    const onClickLike = () => {
+        setChoiceProfile(true)
+        getProfile()
+        setRenderComponent(!renderComponent)
+    }
+
+    const onClickDislike = () => {
+        setChoiceProfile(false)
+        getProfile()
+        setRenderComponent(!renderComponent)
+    }
+
+    useEffect(() => {
+        getProfile()
+    }, [])
+
+    useEffect(() => {
+        postChoosePerson()
+    }, [renderComponent])
 
     return (
 
@@ -40,7 +57,6 @@ const TelaInicial = () => {
 
             <div> 
                 <h2>astromatch</h2>
-                <button>Olhar os matches</button>
             </div>
 
             
@@ -55,8 +71,8 @@ const TelaInicial = () => {
             </div>
             
             <div>
-                <button>X</button>
-                <button>s2</button>
+                <button onClick={onClickDislike}>X</button>
+                <button onClick={onClickLike}>s2</button>
             </div>
 
         </div>
