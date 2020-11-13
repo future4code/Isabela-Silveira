@@ -19,7 +19,6 @@ function App() {
     <div className="App">
       {currentPage}
       <button onClick={onClickSwitchPage}>Matches</button>
-      <button>Resetar</button>
     </div>
 
   );

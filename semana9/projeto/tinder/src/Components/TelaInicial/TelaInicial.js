@@ -73,6 +73,7 @@ const TelaInicial = () => {
             <div>
                 <button onClick={onClickDislike}>X</button>
                 <button onClick={onClickLike}>s2</button>
+                
             </div>
 
         </div>

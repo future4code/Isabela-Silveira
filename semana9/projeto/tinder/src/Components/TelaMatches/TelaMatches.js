@@ -18,7 +18,19 @@ const TelaMatches = () => {
         getMatches()
     }, [matche])
 
-    const newArray = matche.map((matches) => {
+    const clearMatches = () => {
+        Axios.put('https://us-central1-missao-newton.cloudfunctions.net/astroMatch/isabela/clear').then(() => {
+            alert('Matches deletados com sucesso! :)');
+        }).catch(() => {
+            alert('Erro ao limpar matches')
+        })
+    }
+
+    const onClickClearMatches = () => {
+        clearMatches()
+    }
+    
+    const listMatches = matche.map((matches) => {
         return (
             <div>
                 <img src={matches.photo}/>
@@ -30,7 +42,8 @@ const TelaMatches = () => {
 
     return (
         <div>
-            {newArray}
+            {listMatches}
+            <button onClick={onClickClearMatches}>Limpar tudo</button>
         </div>
     )
 
