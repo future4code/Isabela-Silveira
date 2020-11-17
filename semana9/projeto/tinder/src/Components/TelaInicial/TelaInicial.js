@@ -1,7 +1,8 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
-
-
+import { ImgProfile, NomeProjeto, ContornaTudo } from './styled';
+import Like from './Components/Images/Like';
+import Dislike from './Components/Images/Dislike';
 
 
 const TelaInicial = () => {
@@ -53,15 +54,15 @@ const TelaInicial = () => {
 
     return (
 
-        <div>
+        <ContornaTudo>
 
             <div> 
-                <h2>astromatch</h2>
+                <NomeProjeto>astromatch</NomeProjeto>
             </div>
 
             
             <div>
-                <img src={profile.photo} />
+                <ImgProfile src={profile.photo} />
                 <h2>{profile.name}</h2>
                 <h3>{profile.age}</h3>
             </div>
@@ -71,15 +72,15 @@ const TelaInicial = () => {
             </div>
             
             <div>
-                <button onClick={onClickDislike}>X</button>
-                <button onClick={onClickLike}>s2</button>
+                <Dislike onClick={onClickDislike} />
+                <Like onClick={onClickLike} />
                 
             </div>
 
-        </div>
+            </ContornaTudo>
     )
 }
 
-
+console.log(TelaInicial)
 export default TelaInicial
 
