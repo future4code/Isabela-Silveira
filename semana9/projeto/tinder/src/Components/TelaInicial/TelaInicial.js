@@ -1,8 +1,8 @@
 import Axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { ImgProfile, NomeProjeto, ContornaTudo } from './styled';
-import Like from './Components/Images/Like';
-import Dislike from './Components/Images/Dislike';
+import Like from '../../imgs/Like.png';
+import Dislike from '../../imgs/Dislike.png';
 
 
 const TelaInicial = () => {
@@ -63,7 +63,7 @@ const TelaInicial = () => {
             
             <div>
                 <ImgProfile src={profile.photo} />
-                <h2>{profile.name}</h2>
+                <h2>{profile.name},</h2>
                 <h3>{profile.age}</h3>
             </div>
 
@@ -72,9 +72,8 @@ const TelaInicial = () => {
             </div>
             
             <div>
-                <Dislike onClick={onClickDislike} />
-                <Like onClick={onClickLike} />
-                
+                <img src={Dislike} onClick={onClickDislike} />
+                <img src={Like} onClick={onClickLike} />   
             </div>
 
             </ContornaTudo>
