@@ -6,6 +6,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import CreateTripPage from '../CreateTripPage/CreateTripPage';
 import ListTripsPage from '../ListTripsPage/ListTripsPage';
 import TripDetailsPage from '../TripDetailsPage/TripDetailsPage'
+import AfterLoginPage from '../AfterLoginPage/AfterLoginPage'
 
 function Router () {
     return (
@@ -34,6 +35,10 @@ function Router () {
 
                 <Route exact path='/trips/details'>
                     <TripDetailsPage />
+                </Route>
+
+                <Route exact path='/after/login'>
+                    <AfterLoginPage />
                 </Route>
 
             </Switch>

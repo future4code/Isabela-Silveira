@@ -18,8 +18,7 @@ function HomePage () {
 
     return (
         <div>
-            <h1>Home</h1>
-            <button>Home</button>
+            <h1>Labex</h1>
             <button onClick={goToSignUp}>Inscreva-se</button>
             <button onClick={goToListTrips}>Viagens</button>
             <button onClick={goToLogin}>Área do administrador</button>
