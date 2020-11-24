@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import Axios from 'axios';
-import { LisTripContainer } from './styled';
+import { ListTripContainer } from './styled';
 import { useHistory } from 'react-router-dom'
 
-function ListTripsPage () {
+function TripListHome () {
     const [trip, setTrip] = useState([])
     const history = useHistory()
 
@@ -20,22 +20,22 @@ function ListTripsPage () {
     }
 
     const goToAppFormPage = () => {
-        history.push('/trips/details')
+        history.push('/trips/list-home')
     }
     
     const renderListTrip = trip.map((trips) => {
         return (
 
-        <LisTripContainer>
+        <ListTripContainer>
             
             <p>{trips.name}</p>
             <p>{trips.description}</p>
             <p>{trips.planet}</p>
             <p>{trips.durationInDays}</p>
             <p>{trips.date}</p>
-            <button onClick={goToAppFormPage}>Ver detalhes</button>
+            <button onClick={goToAppFormPage}>Quero ir</button>
 
-        </LisTripContainer>
+        </ListTripContainer>
 
         )
         
@@ -52,4 +52,4 @@ function ListTripsPage () {
     )
 }
 
-export default ListTripsPage
+export default TripListHome

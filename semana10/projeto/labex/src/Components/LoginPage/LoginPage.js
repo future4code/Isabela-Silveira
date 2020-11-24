@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 import { useHistory } from 'react-router-dom';
+import { DivContainer } from './styled'
 
 function LoginPage () {
     const [email, setEmail] = useState('')
@@ -41,17 +42,17 @@ function LoginPage () {
     }
 
     return (
-        <div>
+        <DivContainer>
             
             <p>Email:</p>
-            <input value={email} onChange={handleEmail}/>
+            <input type={'email'} value={email} onChange={handleEmail}/>
 
             <p>Senha:</p>
-            <input value={password} onChange={handlePassword}/>
+            <input type={'password'} value={password} onChange={handlePassword}/>
 
             <button onClick={login}>Entrar</button>
 
-        </div>
+        </DivContainer>
     )
 }
 

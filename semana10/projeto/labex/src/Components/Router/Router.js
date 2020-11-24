@@ -5,8 +5,9 @@ import ApplicationFormPage from '../ApplicationFormPage/ApplicationFormPage';
 import LoginPage from '../LoginPage/LoginPage';
 import CreateTripPage from '../CreateTripPage/CreateTripPage';
 import ListTripsPage from '../ListTripsPage/ListTripsPage';
-import TripDetailsPage from '../TripDetailsPage/TripDetailsPage'
-import AfterLoginPage from '../AfterLoginPage/AfterLoginPage'
+import TripDetailsPage from '../TripDetailsPage/TripDetailsPage';
+import AfterLoginPage from '../AfterLoginPage/AfterLoginPage';
+import TripListHome from '../TripListHome/TripListHome'
 
 function Router () {
     return (
@@ -39,6 +40,10 @@ function Router () {
 
                 <Route exact path='/after/login'>
                     <AfterLoginPage />
+                </Route>
+
+                <Route exact path='/trips/list-home'>
+                    <TripListHome />
                 </Route>
 
             </Switch>

@@ -1,30 +1,52 @@
 import Axios from 'axios'
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { DivFormContainer, FormContainer } from './styled'
 
 function CreateTripPage () {
-    // const [name, setName] = useState('')
-    // const [planet, setPlanet] = useState('')
-    // const [description, setDescripition] = useState('')
-    // const [durationDays, setDurationDays] = useState()
-    // const [date, setDate] = useState('')
+    const [form, setForm] = useState({
+        nameTrip: '',
+        planet: '',
+        description: '',
+        durationsDays: 0,
+        date: ''
+    })
 
-    // const createTrip = () => {
-    //     const body = {
-    //         name: name,
-    //         planet: planet,
-    //         date: date,
-    //         description: description,
-    //         durationInDays: durationDays,
-            
-    //     }
-    //     Axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/isabela-dumont/trips', body ).then((res) => {
-    //         set
-    //     }).catch((err) => {
-    //         alert('Erro: ', err.message)
-    //     })
+    const history = useHistory()
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+
+        setForm({...form, [name]: value})
+    }
+
+    const HandleSubmittion = (event) => {
+        event.preventDefault()
+
     
-    // }
+        const body = {
+            name: form.name,
+            planet: form.planet,
+            date: form.date,
+            description: form.description,
+            durationInDays: Number(form.durationDays),  
+            }
 
+            Axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/isabela-dumont/trips', body, {
+                headers: {
+                    auth: window.localStorage.getItem('token')
+                }
+            } ).then((res) => {
+                history.push('/viagens')
+                console.log('res: ', res)
+            }).catch((err) => {
+                alert('Erro: ', err.message)
+            })
+            console.log('handleSumib: ', HandleSubmittion)
+        }
+    
+    
+    
 
     return (
         <div>
@@ -33,31 +55,63 @@ function CreateTripPage () {
                 <h3>Crie uma viagem</h3>
             </div>
 
-            <div>
-                <p>Nome:</p>
-                <input />
-            </div>
+            <DivFormContainer>
+              <FormContainer onSubmit={HandleSubmittion}>
+                  <label>Nome:</label>
+                  <input 
+                  type='text'
+                  name='name'
+                  value={form.name}
+                  onChange={handleInputChange}
+                  pattern='[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]{5,}'
+                  title='Informe o nome da viagem'
+                  required
+                  />
+                   
+                  <label>Planeta:</label>
+                  <input 
+                  type='text'
+                  name='planet'
+                  value={form.planet}
+                  onChange={handleInputChange}
+                  required
+                  />
 
-            <div>
-                <p>Planeta:</p>
-                <input />
-            </div>
+                  <label>Data:</label>
+                  <input 
+                  type='date'
+                  name='date'
+                  value={form.date}
+                  onChange={handleInputChange}
+                  required
+                  />
 
-            <div>
-                <p>Data:</p>
-                <input />
-            </div>
+                  <label>Descrição:</label>
+                  <textarea 
+                  type=''
+                  name='description'
+                  value={form.description}
+                  onChange={handleInputChange}
+                  pattern='[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]{30,}'
+                  title='Informe a descrição da viagem'
+                  required
+                  /> 
 
-            <div>
-                <p>Descrição:</p>
-                <input />
-            </div>
+                  <label>Duração da viagem em dias:</label>
+                  <input 
+                  type='Number'
+                  name='durationsDay'
+                  value={form.durationsDays}
+                  onChange={handleInputChange}
+                  min='1'
+                  title='Informe a duração da viagem em dias'
+                  required
+                  />
 
-            <div>
-                <p>Duração da viagem:</p>
-                <input />
-            </div>
+                  <button>Criar</button>
 
+              </FormContainer>
+            </DivFormContainer>
         </div>
     )
 }

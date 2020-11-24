@@ -1,5 +1,8 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
+import TripListHome from '../TripListHome/TripListHome';
+import { LogoH1, DivContainer, ButtonHeader,DivListTripContainer } from './styled';
+
 
 function HomePage () {
     const history = useHistory()
@@ -8,21 +11,31 @@ function HomePage () {
         history.push('/application-form')
     }
 
-    const goToListTrips = () => {
-        history.push('/trips/list')
-    }
-
     const goToLogin = () => {
         history.push('/login')
     }
 
     return (
         <div>
-            <h1>Labex</h1>
-            <button onClick={goToSignUp}>Inscreva-se</button>
-            <button onClick={goToListTrips}>Viagens</button>
-            <button onClick={goToLogin}>Área do administrador</button>
+            <DivContainer>
+
+                <div> 
+                    <LogoH1>Labex</LogoH1>
+                </div>
+
+                <div> 
+                    <ButtonHeader onClick={goToSignUp}>Inscreva-se</ButtonHeader>
+                    <ButtonHeader onClick={goToLogin}>Área do administrador</ButtonHeader>
+                </div>
+
+            </DivContainer>
+
+            <DivListTripContainer>
+                <TripListHome />
+            </DivListTripContainer>
         </div>
+
+    
     )
 }
 
