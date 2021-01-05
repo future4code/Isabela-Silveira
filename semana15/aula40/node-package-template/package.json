@@ -1,0 +1,12 @@
+{
+  "name": "package-template",
+  "version": "1.0.0",
+  "description": "primeira aula de backend da dumont",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "user-info": "clear && node ./programUserInfo.js"
+  },
+  "author": "Isabela-dumont",
+  "license": "ISC"
+}
