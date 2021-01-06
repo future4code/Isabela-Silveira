@@ -1,0 +1,14 @@
+{
+  "name": "aula41",
+  "version": "1.0.0",
+  "description": "exercicios da aula 41",
+  "main": "index.js",
+  "scripts": {
+    "ex1": "clear && tsc && node ./build/ex1.js",
+    "ex2": "clear tsc && node ./build/ex2.js",
+    "ex3": "clear tsc && node ./build/ex3.js",
+    "test": "clear echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
