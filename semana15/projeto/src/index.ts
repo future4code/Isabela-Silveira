@@ -68,6 +68,32 @@ let users: userAccount[] = [
    
 ]
 
+app.post('/users', (req: Request, res: Response) => {
+    
+    let errorCode: number = 400
+
+    try {
+        const reqBody: userAccount = {
+            name: req.body.name,
+            cpf: req.body.cpf,
+            birthDate: req.body.birthDate,
+            balance: req.body.balance,
+            extract: req.body.extract
+        }
+
+        if(!reqBody.name || !reqBody.cpf || !reqBody.birthDate) {
+            errorCode = 422;
+            throw new Error('Algum campo está inválido. Preencha corretamente.')
+        }
+
+        users.push(reqBody);
+        res.status(200).send({message: 'Usuário cadastrado com sucesso!'})
+
+    } catch(error) {
+        res.status(errorCode).send({message: error.message})
+    }
+})
+
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
