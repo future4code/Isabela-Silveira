@@ -68,6 +68,7 @@ let users: userAccount[] = [
    
 ]
 
+// Cadastrar usuário:
 app.post('/users', (req: Request, res: Response) => {
     
     let errorCode: number = 400
@@ -92,6 +93,11 @@ app.post('/users', (req: Request, res: Response) => {
     } catch(error) {
         res.status(errorCode).send({message: error.message})
     }
+})
+
+// pega todos os usuários:
+app.get('/users', (req: Request, res: Response) => {
+    res.status(200).send(users)
 })
 
 
