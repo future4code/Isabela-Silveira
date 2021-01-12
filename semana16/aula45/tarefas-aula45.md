@@ -93,5 +93,44 @@ a) ALTER TABLE Movies ADD playing_limit_date DATE;
 
 b) ALTER TABLE Movies CHANGE evaluation evaluation FLOAT;
 
+c)
+
+update Movies set playing_limit_date = "2021-01-30" where id = "003"; 
+
+update Movies set playing_limit_date = "2017-12-10" where id = "002";
+
+d) Ao rodar a query para atualizar um id que foi deletado, a atualização foi feita, mas como o id não existe mais nenhuma linha foi afetada.
+
+delete from Movies where title = "Se eu fosse você";
+
+update Movies set synopsis = "fazendo teste" where id = "001";
+
+----------------------------------------------------------------------------------------------------------------------
+
+7)
+
+a) select count(*) from Movies group by evaluation > 7.5; ou select count(*) from Movies where evaluation > 7.5;
+
+b) select avg(evaluation) from Movies;
+
+c) select count(*) from Movies where playing_limit_date = "2021-01-30";
+
+d) select count(*) from Movies where playing_limit_date > curdate(); 
+
+e) select max(evaluation) from Movies; 
+
+f) select min(evaluation) from Movies;
+
+----------------------------------------------------------------------------------------------------------------------
+
+8) 
+
+a) select * from Movies order by title asc;
+
+b) select * from Movies order by title desc limit 5;
+
+c) select * from Movies where release_data < curdate() limit 3;
+
+d) select * from Movies order by evaluation limit 3;
 
 ----------------------------------------------------------------------------------------------------------------------
