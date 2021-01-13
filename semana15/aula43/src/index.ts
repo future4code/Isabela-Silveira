@@ -1,0 +1,165 @@
+import express, { Express, Request, Response } from "express"
+import cors from "cors"
+import { AddressInfo } from "net"
+
+
+const app: Express = express();
+
+app.use(express.json());
+app.use(cors());
+
+// exercício 1:
+
+// type user = {
+//     id: number,
+//     name: string,
+//     email: string,
+//     type: string,
+//     age: number 
+// }
+
+// let users: user[] = [
+//     {
+//         id: 1,
+//         name: "Alice",
+//         email: "alice@email.com",
+//         type: "ADMIN",
+//         age: 12
+//     },
+//     {
+//         id: 2,
+//         name: "Bob",
+//         email: "bob@email.com",
+//         type: "NORMAL",
+//         age: 36
+//     },
+//     {
+//         id: 3,
+//         name: "Coragem",
+//         email: "coragem@email.com",
+//         type: "NORMAL",
+//         age: 21
+//     },
+//     {
+//         id: 4,
+//         name: "Dory",
+//         email: "dory@email.com",
+//         type: "NORMAL",
+//         age: 17
+//     },
+//     {
+//         id: 5,
+//         name: "Elsa",
+//         email: "elsa@email.com",
+//         type: "ADMIN",
+//         age: 17
+//     },
+//     {
+//         id: 6,
+//         name: "Fred",
+//         email: "fred@email.com",
+//         type: "ADMIN",
+//         age: 60
+//     }
+// ]
+
+// app.get('/users/all', (req: Request, res: Response) => {
+//        res.status(200).send(users)
+// })
+
+type user = {
+    id: number,
+    name: string,
+    email: string,
+    type: UserType,
+    age: number 
+}
+
+enum UserType {
+    ADMIN = "ADMIN",
+    NORMAL = "NORMAL"
+}
+
+let users: user[] = [
+    {
+        id: 1,
+        name: "Alice",
+        email: "alice@email.com",
+        type: "ADMIN",
+        age: 12
+    },
+    {
+        id: 2,
+        name: "Bob",
+        email: "bob@email.com",
+        type: "NORMAL",
+        age: 36
+    },
+    {
+        id: 3,
+        name: "Coragem",
+        email: "coragem@email.com",
+        type: "NORMAL",
+        age: 21
+    },
+    {
+        id: 4,
+        name: "Dory",
+        email: "dory@email.com",
+        type: "NORMAL",
+        age: 17
+    },
+    {
+        id: 5,
+        name: "Elsa",
+        email: "elsa@email.com",
+        type: "ADMIN",
+        age: 17
+    },
+    {
+        id: 6,
+        name: "Fred",
+        email: "fred@email.com",
+        type: "ADMIN",
+        age: 60
+    }
+]
+
+
+app.get('/users/:type', (req: Request, res: Response) => {
+        let errorCode: number = 400;
+    
+    try {
+        const type: string = req.params.type as string;
+
+        if (!type) {
+            errorCode = 422;
+            throw new Error("Tipo de usuário inválido")
+        } 
+
+        const myUser = users.find(((u: user) => u.type === ));
+
+        if (!myUser) {
+            errorCode = 404;
+            throw new Error("Tipo de usuário não encontrado")
+        }
+
+        const result = myUser;
+        res.status(200).send(result)
+
+    } catch(error) {
+        res.status(errorCode).send(error.message)
+    }
+})
+
+
+
+
+const server = app.listen(process.env.PORT || 3003, () => {
+    if (server) {
+       const address = server.address() as AddressInfo;
+       console.log(`Server is running in http://localhost: ${address.port}`);
+    } else {
+       console.error(`Failure upon starting server.`);
+    }
+});
