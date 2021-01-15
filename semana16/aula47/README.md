@@ -47,3 +47,26 @@ Deu erro, porque a coluna de avaliações não existe mais.
 2)
 
 a) Essa query cria uma tabela de relação com as colunas id do filme e do ator e faz uma referência  com a coluna id da tabela de filme e com a coluna id da tabela de ator.
+
+b) Crie, ao menos, 6 relações nessa tabela
+
+```
+insert into MovieCast values 
+('002', '002'), ('003', '003'), ('004', '005'), 
+('003', '006'), ('004', '011'), ('003', '012');
+```
+
+c. Tente criar uma relação com um filme ou um ator inexistente. Anote e explique o resultado da query
+
+Res: Não é possível adicionar ou atualizar uma linha filha: uma restrição de chave estrangeira falha.
+
+Não foi possível porque para fazer a relação é necessário criar o ator ou o filme primeiro.
+
+
+3)
+
+a) Explique, com suas palavras, a query acima. O que é o operador ON?
+
+Res: É uma condição e se ela não for passada retorna as combinações de todos os itens das duas tabelas.
+
+
