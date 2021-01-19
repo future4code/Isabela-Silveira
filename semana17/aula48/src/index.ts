@@ -1,4 +1,4 @@
-import express, { Express } from 'express';
+import express, { Express, Request, Response } from 'express';
 import { AddressInfo } from "net";
 import knex from "knex";
 import dotenv from "dotenv";
@@ -23,7 +23,7 @@ export const connection = knex({
   });
 
 app.get('/user/all', getAllUsers)
-app.get('user/search', getUserByName)
+app.get('/user/search', getUserByName)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

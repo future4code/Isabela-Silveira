@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import selectUserByName  from '../data/selectUserByName'
+import {selectUserByName}  from '../data/selectUserByName'
 import { user } from '../types/user';
 
 export const getUserByName = async(req: Request, res: Response): Promise<void> => {
@@ -20,4 +20,4 @@ export const getUserByName = async(req: Request, res: Response): Promise<void> =
         console.log(error)
         res.send(error.sqlMessage || error.message)
     }
-}
+} 
