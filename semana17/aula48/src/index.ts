@@ -4,6 +4,7 @@ import knex from "knex";
 import dotenv from "dotenv";
 import { getAllUsers } from './endpoints/getAllUsers';
 import { getUserByName } from './endpoints/getUserByName';
+import { getUserByType } from './endpoints/getUserByType';
 
 dotenv.config();
 
@@ -23,7 +24,10 @@ export const connection = knex({
   });
 
 app.get('/user/all', getAllUsers)
+
 app.get('/user/search', getUserByName)
+
+app.get('/user/search/:type', getUserByType)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {
