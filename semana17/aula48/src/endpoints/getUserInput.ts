@@ -8,10 +8,6 @@ export const getUserInput = async(req: Request, res: Response): Promise<void> =>
 
         const { orderBy, orderType } = req.query as user
 
-        // if (!name) {
-        //     throw new Error("'name' é obrigatório!")
-        // }
-
         if (orderBy !== 'type' && orderBy !== 'name') {
             throw new Error("'name' ou 'type' são obrigatórios!")
         }
