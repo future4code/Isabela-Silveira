@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import { getAllUsers } from './endpoints/getAllUsers';
 import { getUserByName } from './endpoints/getUserByName';
 import { getUserByType } from './endpoints/getUserByType';
+import { getUserInput } from './endpoints/getUserInput'
 
 dotenv.config();
 
@@ -28,6 +29,8 @@ app.get('/user/all', getAllUsers)
 app.get('/user/search', getUserByName)
 
 app.get('/user/search/:type', getUserByType)
+
+app.get('/user/order', getUserInput)
 
 const server = app.listen(process.env.PORT || 3003, () => {
     if (server) {

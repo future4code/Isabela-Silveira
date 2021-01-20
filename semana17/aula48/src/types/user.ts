@@ -1,4 +1,6 @@
 export type user = {
-    name: string,
-    type: string
+    name?: string,
+    type?: string,
+    orderBy?: string,
+    orderType?: string
 }
