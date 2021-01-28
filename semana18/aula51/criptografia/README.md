@@ -19,47 +19,16 @@ o cost, denomidado como round na lib Bcrypt, está relacionado à segurança da 
 
 *Exercício 2*
 
-Agora que já possuímos um id, podemos começar a modelagem do banco. O nosso usuário precisa ter um email e uma senha salva para que a gente consiga fazer a autenticação dele. 
-Na hora de salvar essas informações na tabela, é interessante que façamos uma função específica para isso. Abaixo, há um exemplo: 
+Na aula de ontem, implementamos os endpoints de *signup* e *login* sem utilizar a criptografia. Vamos agora colocar isso. A ideia é simples: **no cadastro**, antes de salvar o usuário no banco, temos que **criptografar** a senha, para que, no banco, não fique a senha em si. Já, **no login**, em vez de comparar a senha enviada diretamente com a salva no banco, usaremos a biblioteca de *Hash* para isso. 
 
-```tsx
-const userTableName = "User";
+*a. Para realizar os testes corretamente, qual deles você deve modificar primeiro? O cadastro ou o login? Justifique.*
 
-const connection = knex({
-  client: "mysql",
-  connection: {
-    host: process.env.DB_HOST,
-    port: 3306,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE_NAME,
-  },
-});
+O primeiro a ser modificado deve ser o de cadastrar usuário, porque já insere no banco de dados a senha criptografada e para fazer o login é necessário comparar a senha que o usuário está colocando com a senha do banco de dados.
 
-const createUser = async (id: string, email: string, password: string) => {
-  await connection
-    .insert({
-      id,
-      email,
-      password,
-    })
-    .into(userTableName);
-};
-```
+*d. No exercício de ontem, nós criamos o endpoint user/profile. Também temos que modificar esse endpoint devido à adição da criptografia? Justifique.*
 
-*a. Explique o código acima com as suas palavras.*
+Não, pois nesse endpoint não precisa do password.
 
-O código acima está inserindo um novo usuário que tem id, email e senha na tabelha de usuário do banco de dados.
-
-*b. Comece criando a tabela de usuários. Coloque a query que você utilizou no arquivo de respostas.*
-
-```tsx
-CREATE TABLE User_profile (
-	id VARCHAR(255) PRIMARY KEY,
-    email VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL
-);
-```
 *Exercício 3*
 Antes de poder fazer o endpoint de cadastro, precisamos de uma forma para gerar o token de autenticação do usuário. Para isso, vamos usar o JWT. Ele possui uma função que permite gerar o token do usuário, que recebe três informações:
 

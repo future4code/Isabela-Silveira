@@ -1,16 +1,17 @@
 import { Request, Response } from "express";
 import insertUser from "../data/insertUser";
 import { generateToken } from "../service/authenticator";
+import { generateHash } from "../service/hashManager";
 import { generate } from "../service/idGenerator";
 
 
 export default async function createUser(req: Request, res: Response): Promise<void> {
     try {
 
-        const { email, password } = req.body 
+        const { email, password, role } = req.body 
 
-        if (!email || !password) {
-            throw new Error('Preencha os campos "name" e "password"')
+        if (!email || !password || !role) {
+            throw new Error('Preencha todos os campos')
         }
 
         if (!email.includes('@')) {
@@ -25,13 +26,18 @@ export default async function createUser(req: Request, res: Response): Promise<v
 
         const id: string = generate()
 
+        const cypherPassword: string = await generateHash(password)
+
         await insertUser(
             id,
             email,
-            password
+            cypherPassword
         );
 
-        const token = generateToken(id);
+        const token = generateToken({
+            id, 
+            role
+        });
 
         res.status(200).send({token});
         

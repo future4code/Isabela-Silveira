@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
 import { generateToken } from "../service/authenticator";
 import { loginInput } from "../types/types";
-import { getUserByEmail } from "../data/getUserByEmail";
+import selectUserByEmail  from "../data/selectUserByEmail";
+import { compare } from "../service/hashManager";
 
 
 export default async function login(req: Request, res: Response): Promise<void> {
@@ -17,19 +18,22 @@ export default async function login(req: Request, res: Response): Promise<void> 
             throw new Error('Informe sua senha')
         }
 
-
-        
-        const user = await getUserByEmail(email)
+        const user = await selectUserByEmail(email)
 
         if(!user) {
             throw new Error("Usuário não encontrado")
         }
 
-        if(user.password !== password) {
-            throw new Error("Senha incorreta")
+        const passwordIsCorrect: boolean = await compare(password, user.password)
+
+        if(!passwordIsCorrect){
+            throw new Error('Senha incorreta.')
         }
 
-        const token = generateToken(user.id);
+        const token = generateToken({
+            id: user.id,
+            role: user.role
+        });
         res.status(200).send({token})
 
     } catch (error) {

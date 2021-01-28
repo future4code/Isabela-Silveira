@@ -5,7 +5,8 @@ export type user = {
 }
 
 export type AuthenticationData = {
-    id: string
+    id: string,
+    role: string
 }
 
 export type loginInput = {

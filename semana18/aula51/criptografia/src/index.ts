@@ -4,8 +4,9 @@ import { AddressInfo } from "net";
 import knex from "knex";
 import dotenv from "dotenv";
 import createUser from './endpoints/createUser';
-import {getUserByEmail} from './data/getUserByEmail';
+import selectUserByEmail from './data/selectUserByEmail';
 import login from './endpoints/login';
+import getUserById from './endpoints/getUserById';
 
 dotenv.config();
 
@@ -14,9 +15,11 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
+//endpoints:
 app.post('/user/signup', createUser)
-app.get('/user/:email', getUserByEmail)
+app.get('/user/:email', selectUserByEmail)
 app.post('/login', login)
+app.get("/user/profile", getUserById)
 
 export const connection = knex({
     client: "mysql",

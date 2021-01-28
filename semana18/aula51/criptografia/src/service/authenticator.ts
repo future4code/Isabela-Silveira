@@ -1,8 +1,11 @@
 import * as jwt from 'jsonwebtoken';
 import { AuthenticationData } from '../types/types';
 
-export function generateToken(id: string): string {
-    const token: string = jwt.sign({id},
+export function generateToken(input: AuthenticationData): string {
+    const token: string = jwt.sign({
+        id: input.id,
+        role: input.role
+    },
         process.env.JWT_KEY as string,
         {expiresIn: '1y'});
 

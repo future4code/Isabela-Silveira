@@ -11,6 +11,6 @@ export async function generateHash(plainText: string): Promise<string> {
     return cypherText
 }
 
-export async function compare(plainText: string, cypherText: string): Promise<boolean> {
+export function compare(plainText: string, cypherText: string): Promise<boolean> {
     return bcrypt.compare(plainText, cypherText)
 }
