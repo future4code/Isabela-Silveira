@@ -15,7 +15,7 @@ export const businessSignup = async(
         throw new Error('Preencha os campos "name", "email", "password" e "role"')
     }
 
-    if (email.includes('@')) {
+    if (!email.includes('@')) {
         throw new Error('Email inválido')
     }
 
