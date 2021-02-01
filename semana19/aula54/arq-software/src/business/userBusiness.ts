@@ -15,6 +15,10 @@ export const businessSignup = async(
         throw new Error('Preencha os campos "name", "email", "password" e "role"')
     }
 
+    if (email.includes('@')) {
+        throw new Error('Email inválido')
+    }
+
     const id: string = generateId()
 
     const cypherPassword = await hash(password)
