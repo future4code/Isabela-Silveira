@@ -9,4 +9,10 @@ export type AuthenticationData = {
     id: string
 }
 
-
+export type Recipes = {
+    id: string,
+    title: string,
+    description: string,
+    creationDate?: Date,
+    authorId: string
+}
