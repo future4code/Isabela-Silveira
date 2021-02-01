@@ -30,3 +30,24 @@ export const selectUserByEmail = async(email: string): Promise<user> => {
         throw new Error(error.slqMessage || error.message)
      }
 }
+
+export const getAllUser = async(): Promise<any[]> => {
+
+    try {
+
+        const users: any = []
+
+        const result = await connection()
+        .select('*')
+        .from('User_Arq')
+
+        for(let user of result) {
+            users.push(user);
+        }
+
+        return users
+
+    } catch (error) {
+        throw new Error(error.slqMessage || error.message)
+    }
+}
