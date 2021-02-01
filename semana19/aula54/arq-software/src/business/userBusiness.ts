@@ -1,5 +1,6 @@
-import { insertUser } from "../data/userDataBase";
-import { USER_ROLES } from "./entities/user";
+import { compare } from "bcryptjs";
+import { insertUser, selectUserByEmail } from "../data/userDataBase";
+import { user, USER_ROLES } from "./entities/user";
 import { generateToken } from "./services/authenticator";
 import { hash } from "./services/hashManager";
 import { generateId } from "./services/idGenerator";
@@ -37,5 +38,31 @@ export const businessSignup = async(
     })
 
     return token 
+
+}
+
+export const businessLogin = async(
+    email: string,
+    password: string
+) => {
+
+    if (!email || !password) {
+        throw new Error('Email e senha são obrigatórios')
+    }
+
+    const user: user = await selectUserByEmail(email)
+
+    const passwordIsCorrect: boolean = await compare(password, user.password)
+
+    if (!user || !passwordIsCorrect) {
+        throw new Error('Usuário não encontrado ou senha incorreta')
+    }
+
+    const token: string = generateToken({
+        id: user.id,
+        role: user.role
+    })
+
+    return token
 
 }

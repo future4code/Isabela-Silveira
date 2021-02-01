@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { businessSignup } from "../business/userBusiness";
+import { businessLogin, businessSignup } from "../business/userBusiness";
 
 export const signup = async(req: Request, res: Response) => {
     try {
@@ -19,4 +19,18 @@ export const signup = async(req: Request, res: Response) => {
     } catch(error) {
         res.status(400).send(error.message)
     }
+}
+
+export const login = async(req: Request, res: Response): Promise<void> => {
+    try {
+
+        const { email, password } = req.body
+        
+        const token = await businessLogin(email, password)
+
+        res.send({message: "Usuário logado", token})
+
+    } catch (error) {
+        res.status(400).send(error.message)
+     }
 }
