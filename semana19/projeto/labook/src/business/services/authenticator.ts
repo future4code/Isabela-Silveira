@@ -1,4 +1,5 @@
 import * as jwt from "jsonwebtoken"
+import { AuthenticationData } from "../entities/user"
 
 export function generateToken(
     payload: AuthenticationData
