@@ -2,9 +2,10 @@
 
 import express, { Express, Request, Response } from "express"
 import cors from "cors"
+import { userRouter } from "./controller/routes/userRouter"
 
-import * as jwt from "jsonwebtoken"
-import * as bcrypt from "bcryptjs"
+
+
 
 
 
@@ -17,83 +18,12 @@ app.use(express.json())
 app.use(cors())
 
 
-/**************************** SERVICES ******************************/
-
-
-
-function generateToken(
-   payload: AuthenticationData
-): string {
-   return jwt.sign(
-      payload,
-      process.env.JWT_KEY as string,
-      {
-         expiresIn: process.env.JWT_EXPIRES_IN
-      }
-   )
-}
-
-function getTokenData(
-   token: string
-): AuthenticationData {
-   const result: any = jwt.verify(
-      token,
-      process.env.JWT_KEY as string
-   )
-
-   return { id: result.id, }
-}
-
-const hash = async (
-   plainText: string
-): Promise<string> => {
-   const rounds = Number(process.env.BCRYPT_COST);
-   const salt = await bcrypt.genSalt(rounds);
-   return bcrypt.hash(plainText, salt)
-}
-
-const compare = async (
-   plainText: string, cypherText: string
-): Promise<boolean> => {
-   return bcrypt.compare(plainText, cypherText)
-}
-
 /**************************** ENDPOINTS ******************************/
 
-app.post('/users/signup', async (req: Request, res: Response) => {
-   try {
-      let message = "Success!"
-      const { name, email, password } = req.body
+app.use('/signup', userRouter)
 
-      if (!name || !email || !password) {
-         res.statusCode = 406
-         message = '"name", "email" and "password" must be provided'
-         throw new Error(message)
-      }
 
-      const id: string = generateId()
 
-      const cypherPassword = await hash(password);
-
-      await connection('labook_users')
-         .insert({
-            id,
-            name,
-            email,
-            password: cypherPassword
-         })
-
-      const token: string = generateToken({ id })
-
-      res.status(201).send({ message, token })
-
-   } catch (error) {
-      res.statusCode = 400
-      let message = error.sqlMessage || error.message
-
-      res.send({ message })
-   }
-})
 
 app.post('/users/login', async (req: Request, res: Response) => {
    try {
