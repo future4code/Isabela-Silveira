@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
-import { signupInputDTO } from "../business/entities/user";
-import { businessSignup } from "../business/userBusiness";
+import { signupInputDTO, User } from "../business/entities/user";
+import { businessLogin, businessSignup } from "../business/userBusiness";
+import { selectUserByEmail } from "../data/userDataBase";
 
 
 export const signup = async (req: Request, res: Response) => {
@@ -25,5 +26,23 @@ export const signup = async (req: Request, res: Response) => {
        res.send({ message })
     }
  }
+
+ export const login = async (req: Request, res: Response) => {
+   try {
+      let message = "Success!"
+
+      const { email, password } = req.body
+
+      const token = await businessLogin(email, password)
+
+      res.status(200).send({ message, token })
+
+   } catch (error) {
+      let message = error.sqlMessage || error.message
+      res.statusCode = 400
+
+      res.send({ message })
+   }
+}
 
 
