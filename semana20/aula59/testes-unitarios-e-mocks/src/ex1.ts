@@ -4,14 +4,14 @@
    força
 */
 
-interface persons {
+interface Persons {
     name: string,
     life: number,
     defense: number,
     force: number
 }
 
-export const validateCharacter = (input: persons): boolean => {
+export const validateCharacter = (input: Persons): boolean => {
     if (!input.name || input.life === undefined ||input.defense === undefined || input.force === undefined) {
         return false
     }
